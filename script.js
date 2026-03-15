@@ -88,9 +88,58 @@ nextPage(6);
 
 }
 
-
-
 function startConfetti(){
+
+const canvas = document.getElementById("confetti");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let pieces = [];
+
+for(let i=0;i<200;i++){
+
+pieces.push({
+
+x: canvas.width/2,
+y: canvas.height/2,
+
+angle: Math.random()*2*Math.PI,
+speed: Math.random()*6 + 2,
+
+size: Math.random()*8 + 4
+
+});
+
+}
+
+function draw(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+pieces.forEach(p=>{
+
+p.x += Math.cos(p.angle)*p.speed;
+p.y += Math.sin(p.angle)*p.speed;
+
+p.speed *= 0.98;
+
+ctx.fillStyle = ["#ff6f9c","#ffd166","#06d6a0","#118ab2"][Math.floor(Math.random()*4)];
+
+ctx.fillRect(p.x,p.y,p.size,p.size);
+
+});
+
+requestAnimationFrame(draw);
+
+}
+
+draw();
+
+}
+
+/*function startConfetti(){
 
 const canvas=document.getElementById("confetti");
 
@@ -146,4 +195,4 @@ requestAnimationFrame(draw);
 
 draw();
 
-}
+}*/
