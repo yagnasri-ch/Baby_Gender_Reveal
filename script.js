@@ -13,7 +13,6 @@ startCountdown();
 }
 
 
-
 function submitSuggestion(){
 
 let audience=document.getElementById("audienceName").value;
