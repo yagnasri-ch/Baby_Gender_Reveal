@@ -12,51 +12,33 @@ startCountdown();
 
 }
 
-
 function submitSuggestion(){
 
-let audience=document.getElementById("audienceName").value;
+let audience = document.getElementById("audienceName").value;
+let babyname = document.getElementById("babyName").value;
 
-let babyname=document.getElementById("babyName").value;
-
-if(audience==="" || babyname===""){
-
-alert("Please enter both fields");
-
-return;
-
+if(audience === "" || babyname === ""){
+  alert("Please enter both fields");
+  return;
 }
 
+let data = new URLSearchParams();
+data.append("audience", audience);
+data.append("babyname", babyname);
+
 fetch("https://script.google.com/macros/s/AKfycbzr9wjIoF_8nGg8XjsmxXf2FTG0Q62nA3rzcNFgSTX5gfisE1V3cLG3CkN_FUWk7_h4/exec",{
-
-method:"POST",
-
-body:JSON.stringify({
-
-audience:audience,
-
-babyname:babyname
-
-})
-
-})
-
-.then(res=>res.json())
-
-.then(data=>{
+  method: "POST",
+  body: data
+});
 
 alert("Thanks for your suggestion!");
 
 document.getElementById("audienceName").value="";
-
 document.getElementById("babyName").value="";
 
-});
+nextPage(5);
 
 }
-
-
-
 
 function startCountdown(){
 
