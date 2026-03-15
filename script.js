@@ -34,7 +34,7 @@ return;
 
 }
 
-fetch("YOUR_SCRIPT_URL",{
+fetch("https://script.google.com/macros/s/AKfycbzr9wjIoF_8nGg8XjsmxXf2FTG0Q62nA3rzcNFgSTX5gfisE1V3cLG3CkN_FUWk7_h4/exec",{
 
 method:"POST",
 
