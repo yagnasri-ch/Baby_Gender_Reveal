@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Baby Reveal</title>
+
+<link rel="stylesheet" href="styles.css">
+
+</head>
+
+
+<body>
+
+
+<div id="page1" class="page active">
+
+<h1>👶 Baby Reveal</h1>
+
+<p>Take a guess before the big reveal!</p>
+
+<button onclick="nextPage(2)">Start</button>
+
+</div>
+
+
+
+<div id="page2" class="page">
+
+<h2>What do you think the baby will be?</h2>
+
+<button onclick="nextPage(3)">💙 Team Boy</button>
+
+<button onclick="nextPage(3)">💗 Team Girl</button>
+
+</div>
+
+
+
+<div id="page3" class="page">
+
+<h2>Old Wives' Tale</h2>
+
+<p>If mom craves sweets 🍰 the baby might be...</p>
+
+<button onclick="nextPage(4)">Girl</button>
+
+<button onclick="nextPage(4)">Boy</button>
+
+</div>
+
+
+
+<div id="page4" class="page">
+
+<h2>Suggest a Baby Name</h2>
+
+<input id="audienceName" placeholder="Your name">
+
+<input id="babyName" placeholder="Baby name suggestion">
+
+<button onclick="submitSuggestion()">Submit</button>
+
+<button onclick="nextPage(5)">Continue</button>
+
+</div>
+
+
+
+<div id="page5" class="page">
+
+<h2>The moment you've been waiting for...</h2>
+
+<div id="count">3</div>
+
+</div>
+
+
+
+<div id="page6" class="page">
+
+<h1>🎉 It's Reveal Time 🎉</h1>
+
+<video autoplay controls>
+
+<source src="gender_reveal_video.mp4" type="video/mp4">
+
+</video>
+
+</div>
+
+
+<canvas id="confetti"></canvas>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
